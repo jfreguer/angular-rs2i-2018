@@ -1,25 +1,25 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">{{ title }}</a>
+  <a class="navbar-brand" routerLink="/home">{{ title }}</a>
   <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
   [attr.aria-expanded]="!isCollapsed" aria-controls="navbarNav">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav" [ngbCollapse]="isCollapsed">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav" (click)="isCollapsed = !isCollapsed">
       <li class="nav-item">
-        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">List</a>
+        <a class="nav-link" routerLink="/list" routerLinkActive="active">List</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="#">Livrees</a>
+          <a class="nav-link" routerLink="/livrees" routerLinkActive="active">Livrees</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" (click)="isCollapsed = !isCollapsed">
         <a class="nav-link" href="#">Add</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Login</a>
+        <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
       </li>
     </ul>
   </div>

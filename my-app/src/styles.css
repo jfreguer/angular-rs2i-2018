@@ -13,3 +13,8 @@
 .state-livree{
   color: greenyellow;
 }
+
+body .navbar-light .navbar-nav .nav-link.active{
+  color: red
+}
+
