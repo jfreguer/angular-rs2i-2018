@@ -19,28 +19,31 @@ export class CollectionService {
   }
 
   /**
-    * set collection
-    */
+   * set collection
+   */
   set collection(col: Item[]) {
     this._collection = col;
   }
 
   /**
-  * get one item from collection
-  */
+   * get one item from collection
+   */
 
   /**
-  * add item in collection
-  */
+   * add item in collection
+   */
+  public add(item: Item): void {
+    this.collection.push(item);
+  }
 
   /**
-  * update item in collection
-  */
+   * update item in collection
+   */
   public update(arg0: Item): void {
     // Update en base de données à mettre en place + catch des erreurs
   }
 
   /**
-  * delete item in collection
-  */
-  }
+   * delete item in collection
+   */
+}

@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
-import { ItemsModule } from './items/items.module';
-
 const appRoutes: Routes = [
   { path: '',
     redirectTo: '/login',

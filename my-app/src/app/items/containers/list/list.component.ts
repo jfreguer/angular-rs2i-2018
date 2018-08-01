@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CollectionService } from '../../../core/services/collection.service';
 import { AbstractComponent } from '../abstract/abstract.component';
+import { Item } from '../../../shared/interfaces/item';
 
 @Component({
   selector: 'app-list',
@@ -17,5 +18,9 @@ export class ListComponent extends AbstractComponent  implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  public add(item: Item): void{
+    console.log(item);
   }
 }
