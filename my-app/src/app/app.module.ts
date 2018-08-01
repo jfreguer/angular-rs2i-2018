@@ -3,6 +3,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LOCALE_ID, NgModule } from '@angular/core';
 
 import { registerLocaleData } from '@angular/common';
+import { Router } from '@angular/router';
 import localeFr from '@angular/common/locales/fr';
 
 // the second parameter 'fr' is optional
@@ -10,14 +11,11 @@ registerLocaleData(localeFr, 'fr');
 
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
-import { HomeModule } from './home/home.module';
-import { ItemsModule } from './items/items.module';
 import { LoginModule } from './login/login.module';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
-import { Router } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -28,8 +26,6 @@ import { Router } from '@angular/router';
     CoreModule,
     SharedModule,
     LoginModule,
-    HomeModule,
-    ItemsModule,
     NgbModule.forRoot(),
     AppRoutingModule,
     PageNotFoundModule
