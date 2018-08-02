@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '../../../node_modules/@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 // External librairies
@@ -13,6 +13,7 @@ import { NavComponent } from './components/nav/nav.component';
 
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { FilterByStatePipe } from './pipes/filter-by-state.pipe';
+import { FormReactiveComponent } from './components/form-reactive/form-reactive.component';
 import { StateDirective } from './directives/state.directive';
 
 @NgModule({
@@ -21,9 +22,10 @@ import { StateDirective } from './directives/state.directive';
     NgbModule,
     RouterModule,
     FormsModule,
-    IconsModule
+    IconsModule,
+    ReactiveFormsModule
   ],
-  declarations: [NavComponent, ItemComponent, CapitalizePipe, FilterByStatePipe, StateDirective, FormComponent],
-  exports: [NavComponent, ItemComponent, FilterByStatePipe, FormComponent]
+  declarations: [NavComponent, ItemComponent, CapitalizePipe, FilterByStatePipe, StateDirective, FormComponent, FormReactiveComponent],
+  exports: [NavComponent, ItemComponent, FilterByStatePipe, FormComponent, FormReactiveComponent]
 })
 export class SharedModule { }
