@@ -2,8 +2,9 @@
   <form novalidate #form="ngForm" (ngSubmit)="process()">
 
     <div class="form-group">
-      <input name="name" [(ngModel)]="newItem.name" type="text" class="form-control" placeholder="Enter full name" required minlength="5">
+      <input name="name" #nom="ngModel" [(ngModel)]="newItem.name" type="text" class="form-control" placeholder="Enter full name" required minlength="5">
       {{ newItem.name }}
+      <div class="alert alert-danger" *ngIf="nom.invalid && nom.touched">Champs invalid</div>
     </div>
 
     <div class="form-group">

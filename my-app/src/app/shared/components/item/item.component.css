@@ -1,0 +1,9 @@
+.card-header .btn {
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+.card-body .btn {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}

@@ -4,10 +4,10 @@ import { NgModule } from '@angular/core';
 import { ItemsRoutingModule } from './items-routing.module';
 import { SharedModule } from '../shared/shared.module';
 
+import { AddComponent } from './containers/add/add.component';
+import { AbstractComponent } from './containers/abstract/abstract.component';
 import { ListComponent } from './containers/list/list.component';
 import { LivreesComponent } from './containers/livrees/livrees.component';
-import { AbstractComponent } from './containers/abstract/abstract.component';
-import { AddComponent } from './containers/add/add.component';
 
 @NgModule({
   imports: [

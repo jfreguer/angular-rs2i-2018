@@ -20,7 +20,7 @@ export class ListComponent extends AbstractComponent  implements OnInit {
   ngOnInit() {
   }
 
-  public add(item: Item): void{
+  public add(item: Item): void {
     console.log(item);
   }
 }
