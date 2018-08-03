@@ -1,8 +1,8 @@
 <div class="card">
   <div class="card-header">
       <span [appState]="item.state">{{ item.state}}</span>
-      <button class="btn btn-info float-right"><fa-icon [icon]="faEdit"></fa-icon></button>
-      <button class="btn btn-danger float-right"><fa-icon [icon]="faTrashAlt"></fa-icon></button>
+      <button class="btn btn-info float-right" ><fa-icon [icon]="faEdit"></fa-icon></button>
+      <button class="btn btn-danger float-right" (click)="delete()"><fa-icon [icon]="faTrashAlt"></fa-icon></button>
   </div>
   <div class="card-body">
     <h5 class="card-title">{{ item.name | capitalize }}</h5>

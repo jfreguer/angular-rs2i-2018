@@ -14,6 +14,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { FilterByStatePipe } from './pipes/filter-by-state.pipe';
 import { FormReactiveComponent } from './components/form-reactive/form-reactive.component';
+import { FormReactiveLoginComponent } from './components/form-reactive-login/form-reactive-login.component';
 import { StateDirective } from './directives/state.directive';
 
 @NgModule({
@@ -25,7 +26,8 @@ import { StateDirective } from './directives/state.directive';
     IconsModule,
     ReactiveFormsModule
   ],
-  declarations: [NavComponent, ItemComponent, CapitalizePipe, FilterByStatePipe, StateDirective, FormComponent, FormReactiveComponent],
-  exports: [NavComponent, ItemComponent, FilterByStatePipe, FormComponent, FormReactiveComponent]
+  declarations: [NavComponent, ItemComponent, CapitalizePipe, FilterByStatePipe, StateDirective, FormComponent,
+    FormReactiveComponent, FormReactiveLoginComponent],
+  exports: [NavComponent, ItemComponent, FilterByStatePipe, FormComponent, FormReactiveComponent, FormReactiveLoginComponent]
 })
 export class SharedModule { }

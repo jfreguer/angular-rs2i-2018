@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Item } from '../../../shared/interfaces/item';
 import { CollectionService } from '../../../core/services/collection.service';
 import { State } from '../../../shared/enums/state.enum';
 import { AbstractComponent } from '../abstract/abstract.component';
@@ -11,10 +10,10 @@ import { AbstractComponent } from '../abstract/abstract.component';
 })
 export class LivreesComponent extends AbstractComponent implements OnInit {
 
-  public collection: Item[];
   public state = State;
 
-  constructor(collectionService: CollectionService
+  constructor(
+    collectionService: CollectionService
   ) {
     super(collectionService);
     super.ngOnInit();

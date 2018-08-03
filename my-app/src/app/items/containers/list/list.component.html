@@ -1,5 +1,5 @@
-<div class="container">
-    <ng-container *ngFor="let cmd of collection | filterByState: 'Non Livrée'">
+<div class="container" *ngIf="collection">
+    <ng-container *ngFor="let cmd of (collection | async) | filterByState">
         <app-item [item]="cmd"></app-item>
     </ng-container>
 </div>

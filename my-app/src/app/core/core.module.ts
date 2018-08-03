@@ -1,10 +1,15 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../../environments/environnment.firebase';
 
 @NgModule({
   imports: [
-    CommonModule
-  ],
-  declarations: []
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    HttpClientModule
+    ],
 })
 export class CoreModule { }

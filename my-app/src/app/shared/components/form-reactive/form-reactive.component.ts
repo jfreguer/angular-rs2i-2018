@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { State } from '../../enums/state.enum';
 import { Item } from '../../interfaces/item';
+import { DateService } from '../../../core/services/date.service';
 
 @Component({
   selector: 'app-form-reactive',
@@ -17,6 +18,7 @@ export class FormReactiveComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
+    private dateService: DateService
   ) { }
 
   ngOnInit() {
@@ -40,6 +42,8 @@ export class FormReactiveComponent implements OnInit {
 
   public process() {
     console.log(this.form.value);
+    this.form.get('deliveryDate').setValue(this.dateService.convertDateToISO(this.form.get('deliveryDate').value));
+
     this.nItem.emit(this.form.value);
 
     // vide l'ensemble du formulaire
