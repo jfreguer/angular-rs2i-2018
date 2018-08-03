@@ -1,9 +1,9 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-import { User } from '../../interfaces/user';
 import { ConnectService } from '../../../core/services/connect.service';
 import { BehaviorSubject } from 'rxjs';
+import { Auth } from '../../interfaces/auth';
 
 @Component({
   selector: 'app-form-reactive-login',
@@ -15,7 +15,7 @@ export class FormReactiveLoginComponent implements OnInit {
   public form: FormGroup;
   public msg: BehaviorSubject<string>;
 
-  @Output() nUser: EventEmitter<User> = new EventEmitter;
+  @Output() nAuth: EventEmitter<Auth> = new EventEmitter;
 
   constructor(
     private fb: FormBuilder,
@@ -24,7 +24,7 @@ export class FormReactiveLoginComponent implements OnInit {
 
   ngOnInit() {
     this.createForm();
-    this.msg = this.connectService.msg;
+    this.msg = this.connectService.msg$;
   }
 
   private createForm(): void {
@@ -40,7 +40,7 @@ export class FormReactiveLoginComponent implements OnInit {
     });
   }
   public process() {
-    this.nUser.emit(this.form.value);
+    this.nAuth.emit(this.form.value);
 
     // vide l'ensemble du formulaire
     this.form.reset();

@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { User } from '../../../shared/interfaces/user';
-
 import { ConnectService } from '../../../core/services/connect.service';
-import { BehaviorSubject } from '../../../../../node_modules/rxjs';
+
+import { Auth } from '../../../shared/interfaces/auth';
 
 @Component({
   selector: 'app-login',
@@ -19,8 +18,8 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  public connect(user: User): void {
-    const validCredentials = this.connectService.connect(user);
+  public connect(auth: Auth): void {
+    const validCredentials = this.connectService.connect(auth);
 
   }
 }

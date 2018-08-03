@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { State } from '../../enums/state.enum';
 import { Item } from '../../interfaces/item';
@@ -15,6 +15,7 @@ export class FormReactiveComponent implements OnInit {
   public states = Object.values(State);
 
   @Output() nItem: EventEmitter<Item> = new EventEmitter;
+  @Input() itemToEdit: Item;
 
   constructor(
     private fb: FormBuilder,
@@ -28,15 +29,15 @@ export class FormReactiveComponent implements OnInit {
   private createForm(): void {
     this.form = this.fb.group({
       name: [
-        '',
+        this.itemToEdit ? this.itemToEdit.name : '',
         Validators.compose([Validators.required, Validators.minLength(5)])
       ],
       reference: [
-        '',
+        this.itemToEdit ? this.itemToEdit.reference : '',
         Validators.compose([Validators.required, Validators.minLength(4)])
       ],
-      state: State.ALIVRER,
-      deliveryDate: '',
+      state : this.itemToEdit ? this.itemToEdit.state : State.ALIVRER,
+      deliveryDate: this.itemToEdit ? this.dateService.dateToNgbPicker(this.itemToEdit.deliveryDate) : '',
     });
   }
 
